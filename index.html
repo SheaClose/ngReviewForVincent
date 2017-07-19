@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="ctrl">
+
+    <!-- Initially when you land on this page, there is no information to
+     display, but as soon as you get a response from the
+     service.getStarWarsCharacters call, this will be filled in. -->
+    <div class="" ng-repeat="person in people">
+      Name: {{ person.name }}<br>
+      Height: {{ person.height }}
+      <hr>
+    </div>
+
+
+
+
+
+
+    <!-- this is the input section for creating a new car, the inputs gather
+     the information into an object on scope called car
+
+     i.e.( $scope.car = {
+     make : input value
+     model: input value
+     year: input value
+   })
+   When the submit button is pressed the $scope.submitCar function is invoked,
+    passing in that object.
+  -->
+    <input type="text" ng-model="car.make" name="" value="">
+    <input type="text" ng-model="car.model" name="" value="">
+    <input type="text" ng-model="car.year" name="" value="">
+    <button type="button" name="button" ng-click="submitCar(car)">Submit Car</button>
+
+    <!-- Here we display the properties on the car object that we get back from
+  the submitCar function after the promise is resolved. -->
+    {{cars.make}} {{cars.model}} {{cars.year}}
+
+    <!-- end of post section  -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="ctrl.js"></script>
+    <script src="service.js"></script>
+  </body>
+</html>
